@@ -8,24 +8,30 @@
 
   <title>{{ page.title }} | {{ site.title }}</title>
 
-  <!-- Open Graph Meta Tags for social media previews -->
+  <!-- Open Graph Meta Tags for better social media previews -->
   <meta property="og:type" content="article">
   <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
   <meta property="og:description" content="{{ page.description | default: site.description }}">
   <meta property="og:image" content="{{ page.social_preview_image | default: site.social_preview_image }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
 
+  <!-- Favicon and Icons -->
+  <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
 
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-  <!-- Optional Fonts (Uncomment if needed) -->
+  <!-- If you have any custom fonts -->
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"> -->
-
 </head>
+
 <body>
   <!-- Site Header -->
   <header class="site-header">
     <div class="container">
-      <a href="{{ '/' | absolute_url }}" class="site-logo">      </a>
+      <a href="{{ '/' | absolute_url }}" class="logo">
+        <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}">
+      </a>
       <nav class="main-nav">
         <ul>
           <li><a href="{{ '/' | absolute_url }}">Home</a></li>
@@ -38,7 +44,7 @@
   </header>
 
   <!-- Main Content Area -->
-  <main class="main-content">
+  <main class="post-container">
     <div class="container">
       <article class="post">
         <header class="post-header">
@@ -58,11 +64,11 @@
           </div>
         </header>
 
-        <div class="post-body">
+        <div class="post-content">
           {{ content }}
         </div>
 
-        <!-- Post Footer -->
+        <!-- Post Footer (Optional) -->
         <footer class="post-footer">
           {% if page.tags %}
             <div class="post-tags">
@@ -75,7 +81,7 @@
         </footer>
       </article>
 
-      <!-- Comments Section (Optional) -->
+      <!-- Disqus or Comments Section (Optional) -->
       {% if site.comments.provider %}
         <section class="comments-section">
           {% include comments.html %}
@@ -84,7 +90,7 @@
     </div>
   </main>
 
-  <!-- Footer Section -->
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
       <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All Rights Reserved.</p>
@@ -96,9 +102,9 @@
     </div>
   </footer>
 
-  <!-- Optional JavaScript (like Analytics, etc.) -->
-  <!-- You can include Google Analytics or other external JS -->
-  <!-- <script src="https://www.google-analytics.com/analytics.js"></script> -->
+  <!-- Optional Scripts (like Google Analytics, etc.) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
 </body>
 </html>
