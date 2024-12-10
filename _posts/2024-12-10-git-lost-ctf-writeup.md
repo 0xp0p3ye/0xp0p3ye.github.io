@@ -9,7 +9,7 @@ author: spideyy
 ---
 
 
----
+
 ![Pasted-image-20241110194126.png](/assets/images/Pasted-image-20241110194126.png)
 
 We began with the repository [https://github.com/crux-bphc/ctf-git-lost](https://github.com/crux-bphc/ctf-git-lost), where the main branch didn’t reveal much initially. However, the commit message’s hint, “Empty start, but secrets lie beneath,” pushed us to dig deeper.
