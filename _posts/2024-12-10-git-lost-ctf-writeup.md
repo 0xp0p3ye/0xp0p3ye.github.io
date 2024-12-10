@@ -1,9 +1,8 @@
 ---
-title: "Git-Lost CTF Writeup"
+title: "Git-Lost-CTF-Writeup"
 date: "2024-12-10 16:00:00 +0530"
 categories: [CTF, Writeups]
-tags: [git, ctf, encryption, xor, aes]
-author: 1
+tags: [git, ctf]
 ---
 
 
