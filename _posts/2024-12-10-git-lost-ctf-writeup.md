@@ -12,25 +12,25 @@ author: spideyy
 
 # Git-Lost CTF Writeup
 ---
-![Pasted-image-20241110194126.png](./Pasted-image-20241110194126.png)
+![Pasted-image-20241110194126.png](_posts/images/Pasted-image-20241110194126.png)
 
 We began with the repository [https://github.com/crux-bphc/ctf-git-lost](https://github.com/crux-bphc/ctf-git-lost), where the main branch didn’t reveal much initially. However, the commit message’s hint, “Empty start, but secrets lie beneath,” pushed us to dig deeper.
 
 ## Clues in the Activity View
 
-![Pasted-image-20241110194321.png](./Pasted-image-20241110194321.png)
+![Pasted-image-20241110194321.png](_posts/images/Pasted-image-20241110194321.png)
 
 Examining the repository’s activity, we noticed the creation and deletion of a branch named `lost-and-found`. This looked suspicious, so we explored the commit changes and found an encrypted text.
 
 ## Changes in the Commit Message
 
-![Pasted-image-20241110194510.png](./Pasted-image-20241110194510.png)
+![Pasted-image-20241110194510.png](_posts/images/Pasted-image-20241110194510.png)
 
 Deciphering this encrypted content seemed essential for unlocking the hidden secrets in the repository.
 
 ## Discovering the Dangling Repo
 
-![Pasted-image-20241110194614.png](./Pasted-image-20241110194614.png)
+![Pasted-image-20241110194614.png](_posts/images/Pasted-image-20241110194614.png)
 
 Changing the commit view to a tree structure led us to several dangling files, providing potential sources for the key elements of the challenge.
 
@@ -77,23 +77,23 @@ print("Decoded Text:", decoded_text)
 
 ## Discovering New Updates in the Repo
 
-![Pasted-image-20241110200554.png](./Pasted-image-20241110200554.png)
+![Pasted-image-20241110200554.png](_posts/images/Pasted-image-20241110200554.png)
 
 Using `git ls-remote --refs origin`, I found the newly hidden `repo sauce`. Browsing the tree structure didn’t yield results, leading me to try accessing the blob directly.
 
 ## Accessing the Blob Object
 
-![Pasted-image-20241110200835.png](./Pasted-image-20241110200835.png)
+![Pasted-image-20241110200835.png](_posts/images/Pasted-image-20241110200835.png)
 
 Opening the blob object gave me the final key needed for decryption!
 
 ## Using the Key to Decrypt the AES Cipher
 
-![Pasted-image-20241110201026.png](./Pasted-image-20241110201026.png)
+![Pasted-image-20241110201026.png](_posts/images/Pasted-image-20241110201026.png)
 
 With this decryption key, I unlocked `logfile.tmp`, revealing the challenge’s final flag:
 
-![Pasted-image-20241110201055.png](./Pasted-image-20241110201055.png)
+![Pasted-image-20241110201055.png](_posts/images/Pasted-image-20241110201055.png)
 
 ---
 
