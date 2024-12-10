@@ -3,8 +3,8 @@ title: Understanding window postMessage and Its XSS Risks
 date: 2024-12-10
 categories: [Web Security, XSS]
 tags: [window-postmessage,xss,javaScript,security]
-author: spideyy
 description: An in-depth look at the risks of using window postMessage and how improper use can lead to XSS vulnerabilities.
+author: spidey
 ---
 
 # Understanding `window.postMessage()` and Its XSS Risks

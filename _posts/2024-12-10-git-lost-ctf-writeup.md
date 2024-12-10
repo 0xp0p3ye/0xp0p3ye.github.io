@@ -4,7 +4,7 @@ date: 2024-12-10
 categories: [CTF, Writeups]
 tags: [git, ctf]
 description: A detailed walkthrough of the Git-Lost CTF challenge, uncovering hidden secrets through repository inspection, encryption, and decoding.
-author: spideyy
+authors: [spidey, p0p3ye]
 ---
 
 
