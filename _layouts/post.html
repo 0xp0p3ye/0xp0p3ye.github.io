@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="author" content="{{ page.author | default: site.social.name }}">
+
+  <title>{{ page.title }} | {{ site.title }}</title>
+
+  <!-- Open Graph Meta Tags for social media previews -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:image" content="{{ page.social_preview_image | default: site.social_preview_image }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+
+
+
+  <!-- Optional Fonts (Uncomment if needed) -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"> -->
+
+</head>
+<body>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="{{ '/' | absolute_url }}" class="site-logo">      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="{{ '/' | absolute_url }}">Home</a></li>
+          <li><a href="{{ '/archives' | absolute_url }}">Archives</a></li>
+          <li><a href="{{ '/tags' | absolute_url }}">Tags</a></li>
+          <li><a href="{{ '/about' | absolute_url }}">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <div class="container">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">{{ page.title }}</h1>
+          <div class="post-meta">
+            <span class="post-date">{{ page.date | date: "%b %d, %Y" }}</span>
+            {% if page.author %}
+              <span class="post-author">By {{ page.author }}</span>
+            {% endif %}
+            {% if page.categories %}
+              <span class="post-categories">Categories: 
+                {% for category in page.categories %}
+                  <a href="{{ site.baseurl }}/categories/#{{ category | slugify }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
+                {% endfor %}
+              </span>
+            {% endif %}
+          </div>
+        </header>
+
+        <div class="post-body">
+          {{ content }}
+        </div>
+
+        <!-- Post Footer -->
+        <footer class="post-footer">
+          {% if page.tags %}
+            <div class="post-tags">
+              <strong>Tags:</strong>
+              {% for tag in page.tags %}
+                <a href="{{ site.baseurl }}/tags/#{{ tag | slugify }}" class="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </footer>
+      </article>
+
+      <!-- Comments Section (Optional) -->
+      {% if site.comments.provider %}
+        <section class="comments-section">
+          {% include comments.html %}
+        </section>
+      {% endif %}
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All Rights Reserved.</p>
+      <ul class="footer-links">
+        <li><a href="{{ '/about' | absolute_url }}">About</a></li>
+        <li><a href="{{ '/contact' | absolute_url }}">Contact</a></li>
+        <li><a href="{{ site.url }}/privacy-policy" target="_blank">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Optional JavaScript (like Analytics, etc.) -->
+  <!-- You can include Google Analytics or other external JS -->
+  <!-- <script src="https://www.google-analytics.com/analytics.js"></script> -->
+
+</body>
+</html>
