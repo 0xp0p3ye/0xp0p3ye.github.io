@@ -1,11 +1,10 @@
 
 ---
-layout: post
 title: "Git-Lost CTF Writeup"
-date: 2024-12-10 16:00:00
+date: "2024-12-10 16:00:00 +0530"
 categories: [CTF, Writeups]
-tags: [Git, CTF, Encryption, XOR, AES]
-author: spideyy
+tags: [git, ctf, encryption, xor, aes]
+author: spideyy  # Ensure it matches the ID in authors.yml
 ---
 
 
