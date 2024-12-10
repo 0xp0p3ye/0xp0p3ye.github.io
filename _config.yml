@@ -204,7 +204,8 @@ compress_html:
   blanklines: false
   ignore:
     envs: [development]
-
+include:
+  - assets
 exclude:
   - "*.gem"
   - "*.gemspec"
