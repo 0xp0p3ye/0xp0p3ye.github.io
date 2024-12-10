@@ -9,8 +9,6 @@ author: spideyy
 ---
 
 
-
-# Git-Lost CTF Writeup
 ---
 ![Pasted-image-20241110194126.png](/assets/images/Pasted-image-20241110194126.png)
 
