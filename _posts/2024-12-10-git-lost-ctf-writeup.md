@@ -1,9 +1,9 @@
-
 ---
-title: "Git-Lost-CTF-Writeup"
-date: "2024-12-10"
+title: Git-Lost-CTF-Writeup
+date: 2024-12-10
 categories: [CTF, Writeups]
 tags: [git, ctf]
+author: 1
 ---
 
 
